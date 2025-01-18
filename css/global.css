@@ -1,0 +1,277 @@
+html {
+	position: relative;
+	box-sizing: border-box;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.4;
+	background-color: var(--smoky-black);
+	color: var(--white-2);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+	font: inherit;
+	padding: 0;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+	margin: 0;
+}
+
+h2,
+h3,
+h4,
+h5 {
+	text-transform: capitalize;
+}
+
+iframe {
+	border: none;
+}
+
+input,
+textarea {
+	display: block;
+	width: 100%;
+	background: none;
+	font: inherit;
+}
+
+/*
+Доступно скрываю элементы
+*/
+
+.visually-hidden {
+	position: fixed;
+	transform: scale(0);
+}
+
+main {
+	margin: 15px 12px 75px 12px;
+	min-height: 259px;
+}
+
+.article {
+	background: var(--eerie-black-2);
+	border: 1px solid var(--jet);
+	border-radius: 20px;
+	box-shadow: var(--shadow-1);
+	animation: fade 0.5s ease backwards;
+	z-index: 1;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.title {
+	position: relative;
+	margin-bottom: 15px;
+	padding-bottom: 7px;
+	font-size: 24px;
+}
+
+.title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 3px;
+	background: var(--text-gradient-yellow);
+	border-radius: 3px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+	background: var(--onyx);
+	border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+	background: var(--orange-yellow-crayola);
+	border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+	width: 20px;
+}
+
+.snowflake {
+	/* не забудьте добавить в html пустой див */
+	position: absolute;
+	top: -10px;
+	width: 10px;
+	/* добавляем ширину */
+	height: 10px;
+	/* высоту */
+	background-color: white;
+	/* цвет снежинки */
+	border-radius: 50%;
+	/* делаем её круглой */
+	animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(100vh);
+	}
+}
+
+@media (min-width: 580px) {
+
+	main {
+		margin-top: 60px;
+		margin-bottom: 100px;
+	}
+
+	.article {
+		width: 520px;
+		margin-inline: auto;
+		padding: 30px;
+	}
+
+
+	.title {
+		padding-bottom: 15px;
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	.title::after {
+		width: 40px;
+		height: 5px;
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.article {
+		width: 700px;
+	}
+
+	.has-scrollbar::-webkit-scrollbar-button {
+		width: 100px;
+	}
+
+
+	.title {
+		padding-bottom: 20px;
+
+	}
+}
+
+@media (min-width: 1024px) {
+
+	main {
+		margin-bottom: 60px;
+	}
+
+	.main-content {
+		position: relative;
+		width: max-content;
+		margin: auto;
+	}
+
+	.article {
+		width: 950px;
+	}
+}
+
+@media (min-width: 1250px) {
+	body::-webkit-scrollbar {
+		width: 20px;
+	}
+
+	body::-webkit-scrollbar-track {
+		background: var(--smoky-black);
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: hsla(0, 0, 100%, 0.11);
+		border: 5px solid var (--smoky-black);
+		border-radius: 20px;
+		box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+			inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+	}
+
+	body::-webkit-scrollbar-thumb:hover {
+		background: hsla(0, 0%, 100%, 0.15);
+	}
+
+	body::-webkit-scrollbar-button {
+		height: 60px;
+	}
+
+	main {
+		max-width: 1200px;
+		margin-inline: auto;
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		gap: 25px;
+	}
+
+	.main-content {
+		min-width: 75%;
+		width: 75%;
+		margin: 0;
+	}
+
+	.article {
+		width: auto;
+		min-width: 100%;
+	}
+}

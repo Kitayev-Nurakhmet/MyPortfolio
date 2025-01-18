@@ -1,0 +1,130 @@
+/* ! certificate */
+.certificate {
+	display: none;
+	padding: 15px;
+}
+
+.certificate.active {
+	display: block;
+}
+
+.certificate__list {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 15px;
+	margin: 0 -15px;
+	padding: 25px 15px 35px 15px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	overscroll-behavior-inline: contain;
+	scroll-snap-type: inline mandatory;
+}
+
+.certificate__item {
+	position: relative;
+	min-width: 100%;
+	padding: 15px;
+	padding-top: 45px;
+	border-radius: 14px;
+	background: var(--border-gradient-onyx);
+	cursor: pointer;
+	box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+	scroll-snap-align: center;
+	z-index: 1;
+}
+
+.certificate__item::before {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	background: var(--bg-gradient-jet);
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.certificate__figure {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(15px, -25px);
+	font-size: 0;
+}
+
+.certificate__figure-img {
+	width: 60px;
+}
+
+.certificate__item-title {
+	margin-bottom: 7px;
+	font-size: 16px;
+}
+
+.certificate__item-time {
+	display: block;
+	margin-bottom: 7px;
+	font-size: 14px;
+}
+
+.certificate__item-text {
+	color: var(--light-gray);
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.6;
+	display: -webkit-box;
+	line-clamp: 4;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+@media (min-width: 580px) {
+	.certificate {
+		padding: 30px;
+	}
+
+	.certificate__title {
+		margin-bottom: 25px;
+	}
+
+	.certificate__list {
+		gap: 30px;
+		margin: 0 -15px;
+		padding: 30px 30px 35px;
+	}
+
+	.certificate__item {
+		padding: 30px;
+		padding-top: 25px;
+	}
+
+	.certificate__figure {
+		transform: translate(30px, -10px);
+	}
+
+	.certificate__figure-img {
+		width: 80px;
+	}
+
+	.certificate__item-title {
+		margin-bottom: 10px;
+		padding-left: 95px;
+		font-size: 18px;
+	}
+
+	.certificate__item-time {
+		font-size: 15px;
+	}
+
+	.certificate__item-text {
+		font-size: 15px;
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+	}
+}
+
+@media (min-width: 1024px) {
+	.certificate__item {
+		min-width: calc(50% - 15px);
+	}
+}
